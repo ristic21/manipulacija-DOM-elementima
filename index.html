@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Assignment 2 - Website Building</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></linkhref>
+
+        <link rel="stylesheet" href="bootstrap.min.css">
+
+        <style>
+
+            body {
+
+                box-sizing: border-box;
+
+                font-family: sans-serif;
+
+            }
+
+
+
+            #login-container {
+
+                width: 460px;
+
+                margin: 0 auto;
+
+            }
+
+
+
+            form label,
+
+            form input {
+
+                width: 100%;
+
+                box-sizing: border-box;
+
+            }
+
+
+
+            form input {
+
+                padding: 8px;
+
+            }
+
+
+
+            form label {
+
+                font-weight: bold;
+
+            }
+
+
+
+            form div {
+
+                margin: 16px 0px;
+
+            }
+            span {
+                float: right;
+                margin-top: -11%;
+                margin-right: 2%;
+                position: relative;
+            }
+            .iconHide {
+                visibility: hidden;
+            }
+
+
+            /*.validInfo {
+
+                border-color: green
+
+            }
+
+            .falseInfo {
+
+                border-color: red
+
+            }*/
+
+        </style>
+
+    </head>
+
+
+
+    <body>
+
+
+
+        <div id="login-container">
+
+
+
+            <form method="GET">
+
+                
+
+                    <label for="username">Username:</label>
+
+                    <input id="username" type="text">
+                
+<div>                
+<span class="material-icons iconHide" style="color: green;" id="correctUser">check_circle_outline</span>
+<span class="material-icons iconHide" style="color: red;" id="deniedUser"> highlight_off</span>
+</div>
+
+
+
+                
+
+                    <label for="password">Password:</label>
+
+                    <input id="userPassword" type="password">
+
+                    <div>                
+                        <span class="material-icons iconHide" style="color: green;" id="correctPass">check_circle_outline</span>
+                        <span class="material-icons iconHide" style="color: red;" id="deniedPass">highlight_off</span>
+                        </div>
+                        
+                
+
+
+
+                <input type="submit" value="Login" id="submitBtn">
+
+                
+
+                
+
+
+                <p id="message"></p>
+                <p id="message2"></p>
+
+
+
+
+                <script src="jquery-3.6.0.min.js"></script>
+
+                
+
+                <script>
+
+
+            $("#submitBtn").click(function(event) {
+            event.preventDefault()});
+
+            let inputUsername = $("#username")
+
+ 
+
+            $("#submitBtn").click(function () {
+
+ 
+
+            if(inputUsername.val() == ("new_user")){
+
+        inputUsername.css("border-color", "green")
+        /*inputUsername.val("new_user")*/
+
+            } else   {
+
+        inputUsername.css("border-color", "red")
+
+    }
+
+});
+
+
+            let inputPassword = $("#userPassword")
+
+ 
+
+            $("#submitBtn").click(function () {
+
+
+
+            if(inputPassword.val() == ("123456789")){
+
+                inputPassword.css("border-color", "green")
+                
+            } else   {
+
+                inputPassword.css("border-color", "red")
+
+    }
+
+});
+let userMessage = $("#message")
+$("#submitBtn").click(function () {
+if(inputPassword.val() == ("")){
+
+    userMessage.text("please enter password")
+
+} else if (inputPassword.val() !== ("123456789"))  {
+
+    userMessage.text("please enter valid password")
+
+}
+});
+
+let userMessage2 = $("#message2")
+$("#submitBtn").click(function () {
+if(inputUsername.val() == ("")){
+
+    userMessage2.text("please enter username")
+
+} else if (inputUsername.val() !== ("new_user"))  {
+
+    userMessage2.text("please enter valid username")
+
+}
+});
+
+let correctUserIcon = $("#correctUser")
+
+let deniedUserIcon = $("#deniedUser")
+
+$("#submitBtn").click(function () {
+    
+    
+    if(inputUsername.val("new_user")){
+        correctUserIcon.removeClass (".iconHide")
+    } else  {
+        deniedUserIcon.removeClass (".iconHide")
+    }
+});
+
+
+                </script>
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+
+    </body>
+
+</html>
+
+
