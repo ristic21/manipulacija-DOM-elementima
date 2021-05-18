@@ -235,7 +235,7 @@ let deniedUserIcon = $("#deniedUser")
 $("#submitBtn").click(function () {
     
     
-    if(inputUsername.val("new_user")){
+    if(inputUsername.val() == ("new_user")){
         correctUserIcon.removeClass(".iconHide")
     } else  {
         deniedUserIcon.removeClass(".iconHide")
@@ -249,7 +249,7 @@ let deniedPassIcon = $("#deniedPass")
 $("#submitBtn").click(function () {
     
     
-    if(inputPassword.val("new_user")){
+    if(inputPassword.val() == ("123456789")){
         correctPassIcon.removeClass(".iconHide")
     } else  {
         deniedPassIcon.removeClass(".iconHide")
